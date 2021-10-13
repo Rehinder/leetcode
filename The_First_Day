@@ -1,0 +1,27 @@
+package javawork0913;
+
+import java.util.Scanner;
+
+public class lianxi3 {
+public static void main(String[] args) {
+
+    System.out.println("请输入您的税前工资");
+    Scanner in = new Scanner(System.in);
+    double salaryBefore = in.nextDouble();
+    double salaryAfter;
+    if (salaryBefore > 0) {
+        if (salaryBefore <= 3000) {
+        	salaryAfter = salaryBefore * 0.03;
+        } else if (salaryBefore <= 4500) {
+
+        	salaryAfter = salaryBefore * 0.10;
+        } else if (salaryBefore <= 10000) {
+        	salaryAfter = salaryBefore * 0.25;
+        }
+
+    }
+
+    System.out.println("税前："+salaryBefore+"元");
+    System.out.println("税后："+salaryAfter +"元");		
+}
+}
