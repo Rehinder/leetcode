@@ -1,21 +1,31 @@
-int* twoSum(int* nums, int numsSize, int target, int* returnSize){
+/*
+1.函数的返回值为：int*
+2.函数名：twoSum
+3.nums 为传入的已知的数组
+4.numsSize 为传入数组的大小
+5.target 目标值
+6.returnSize 是指针类型，返回的是存放新数组元素个数的地址
+*/
+
+int* twoSum(int* nums, int numsSize, int target, int* returnSize)	
+{
 
     
 	for(int i=0;i<numsSize-1;i++)
 	{
-		for(int j=i+1;i<numsSize;j++)
+		for(int j=i+1;i<numsSize;j++)		//通过两层循环遍历数组nums里的每一个元素
         {
-			if(nums[i]+nums[j]==target)
+			if(nums[i]+nums[j]==target)	//找到和为target的num[i]与nums[j]，目的是找到i和j
 			{
-				int *a=(int *)malloc(sizeof(int)*2);
-				a[0]=i;
-				a[1]=j;
-                *returnSize =2;       
-				return a;
+				int *a=(int *)malloc(sizeof(int)*2);	//为i和j申请存储空间-->建立了一个数组
+				a[0]=i;					
+				a[1]=j;					//将找到的i和j放入刚建立的数组中
+                		*returnSize =2;       			//返回刚建立的数组的大小
+				return a;				//返回找到元素的下标所在的数组
 			}
            
         }
 	}
-    *returnSize =0;
-    return NULL;
+    *returnSize =0;		//该数组中没有任意两个值和为target
+    return NULL;		
 }
