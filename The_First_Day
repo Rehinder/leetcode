@@ -1,27 +1,21 @@
-package javawork0913;
+int* twoSum(int* nums, int numsSize, int target, int* returnSize){
 
-import java.util.Scanner;
-
-public class lianxi3 {
-public static void main(String[] args) {
-
-    System.out.println("请输入您的税前工资");
-    Scanner in = new Scanner(System.in);
-    double salaryBefore = in.nextDouble();
-    double salaryAfter;
-    if (salaryBefore > 0) {
-        if (salaryBefore <= 3000) {
-        	salaryAfter = salaryBefore * 0.03;
-        } else if (salaryBefore <= 4500) {
-
-        	salaryAfter = salaryBefore * 0.10;
-        } else if (salaryBefore <= 10000) {
-        	salaryAfter = salaryBefore * 0.25;
+    
+	for(int i=0;i<numsSize-1;i++)
+	{
+		for(int j=i+1;i<numsSize;j++)
+        {
+			if(nums[i]+nums[j]==target)
+			{
+				int *a=(int *)malloc(sizeof(int)*2);
+				a[0]=i;
+				a[1]=j;
+                *returnSize =2;       
+				return a;
+			}
+           
         }
-
-    }
-
-    System.out.println("税前："+salaryBefore+"元");
-    System.out.println("税后："+salaryAfter +"元");		
-}
+	}
+    *returnSize =0;
+    return NULL;
 }
